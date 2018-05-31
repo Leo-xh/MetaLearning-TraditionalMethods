@@ -19,7 +19,7 @@ class cifar10(object):
         self.row = -1
         self.X = []
         self.Y = []
-        self.bound = 10000
+        self.bound = 100
         if(mode is 'train'):
             for i in range(1,6):
                 data = unpickle("D:/dataset/cifar-10-python/cifar-10-batches-py/data_batch_"+str(i))
