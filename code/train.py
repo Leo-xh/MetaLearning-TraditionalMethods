@@ -6,6 +6,11 @@ import json
 import os
 
 bs = [16,32,64,128]
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 8b093e5da4c8c7372d3325f5b14252b20a5abf55
 if os.path.exists("model.h5"):
     model = keras.models.load_model("model.h5")
     data_train = cifar_input.cifar10()
@@ -17,6 +22,16 @@ if os.path.exists("model.h5"):
     with open("parameter.txt",'r') as file:
         best_run = json.loads(file.read())
     while True:
+<<<<<<< HEAD
         model.fit(x=X_train, y=Y_train, batch_size=bs[best_run['batch_size']], epochs=2, callbacks=[keras.callbacks.EarlyStopping(monitor='acc'),
                   keras.callbacks.ModelCheckpoint("model.h5", period=5),
                   keras.callbacks.TensorBoard(write_grads=True, write_images=True)])
+=======
+        model.fit(x=X_train, y=Y_train, batch_size=bs[best_run['batch_size']], epochs=30, 
+                  validation_data = (X_test, Y_test),
+                  callbacks=[keras.callbacks.EarlyStopping(monitor='acc'),
+                  keras.callbacks.ModelCheckpoint("model.h5", period=5),
+                  keras.callbacks.TensorBoard(write_grads=True, write_images=True)])
+        
+        
+>>>>>>> 8b093e5da4c8c7372d3325f5b14252b20a5abf55
