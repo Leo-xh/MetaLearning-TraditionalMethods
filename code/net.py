@@ -68,8 +68,8 @@ def data():
         return X_train, Y_train, X_test, Y_test, epochs
 
 
-K = 10
-Turns = 10
+K = 3
+Turns = 5
 ep = 2
 bs = [16,32,64,128]
     
